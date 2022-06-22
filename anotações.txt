@@ -1,0 +1,21 @@
+composer clear cache
+-erro ao instalar laravel
+
+php artisan
+-mostra todos os comandos
+
+php artisan serve
+-sobe um servidor
+
+Para criar um controler é preciso acessar a pasta App-Http-Controllers
+
+Para criar uma rota
+[nome da classe, metodo]
+Route::get('/series', [SeriesController::class, 'listarSeries']);
+
+Outra forma de criar um controller - pelo terminal
+php artisan make:controller SeriesController
+
+Criar um controller com todos os métodos
+php artisan make:controller PhotoController --resource
+
