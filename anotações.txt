@@ -19,3 +19,34 @@ php artisan make:controller SeriesController
 Criar um controller com todos os métodos
 php artisan make:controller PhotoController --resource
 
+Não dar o echo direto de um controler
+
+Usando Respose:
+Posso retornar :
+
+return response($resposta, '201', []); sendo o segundo o http status code e o 3 os cabeçalhos
+
+Por padrão já é retorna o codigo 200
+return $resposta
+
+Se retornar um objeto, array, ele vai automaticamente retornar um json
+
+Usando o Request
+   public function index(Request $request)
+   {
+      //pega o id da url
+      $request->get('id');
+
+//pega url do request
+$request->url();
+
+//pega o method usado no request
+$request->method();
+
+//pega inputs do formulario
+$request->input();
+
+//redireciona pra url
+return redirect("google.com.br");
+
+
