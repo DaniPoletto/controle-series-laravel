@@ -49,4 +49,11 @@ $request->input();
 //redireciona pra url
 return redirect("google.com.br");
 
+//exibir uma view
+1 - arquivo
+2 - dados (variavel - array)
+return view('listar-series');
+
+//é o mesmo que 
+return view('listar-series', compact('series'));
 
