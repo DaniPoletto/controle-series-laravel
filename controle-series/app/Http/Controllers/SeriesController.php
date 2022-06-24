@@ -14,11 +14,14 @@ class SeriesController extends Controller
          'Todo mundo odeia o Chris'
       ];
      
-      return view('listar-series', [
-         'series' => $series
-      ]);
+      // return view('listar-series', [
+      //    'series' => $series
+      // ]);
 
       //é o mesmo que 
       // return view('listar-series', compact('series'));
+
+      //é o mesmo que 
+      return view('series.index')->with('series', $series);
    }
 }

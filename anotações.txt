@@ -57,3 +57,45 @@ return view('listar-series');
 //é o mesmo que 
 return view('listar-series', compact('series'));
 
+Blade
+{{$serie}} = echo $serie
+
+      @foreach($series as $serie)
+        <li>{{$serie}}</li>
+      @endforeach
+
+é o mesmo que
+
+      <?php foreach ($series as $serie) {?>
+        <li><?=$serie?></li>
+      <?php } ?>
+
+tbm posso usar
+      return view('listar-series')->with('series', $series);
+
+Component Blade
+criar uma pasta components em resources>views 
+
+<html>
+<title>Series</title>
+<body>
+    <h1>{{$title}}</h1>
+    {{$slot}}
+</body>
+</html>
+
+Title é um atributo que pode ser passado e slot o corpo
+
+<x-layout title="Séries">
+    <ul>
+      @foreach($series as $serie)
+        <li>{{$serie}}</li>
+      @endforeach
+    </ul>
+</x-layout>
+
+por comando:
+php artisan make:component Alerta
+Isso tbm cria uma classe em  App>View>Component
+
+
