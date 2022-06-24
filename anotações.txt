@@ -89,7 +89,7 @@ criar uma pasta components em resources>views
 </html>
 
 Title é um atributo que pode ser passado e slot o corpo
-
+sendo x-nome-do-component que é o nome do arquivo criado
 <x-layout title="Séries">
     <ul>
       @foreach($series as $serie)
