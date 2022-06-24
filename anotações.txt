@@ -73,6 +73,10 @@ Blade
 tbm posso usar
       return view('listar-series')->with('series', $series);
 
+Por padrão se cria uma pasta dento de resources>view>pasta>index
+
+e no controller se chama series.index
+
 Component Blade
 criar uma pasta components em resources>views 
 
