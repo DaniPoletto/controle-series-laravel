@@ -102,4 +102,10 @@ por comando:
 php artisan make:component Alerta
 Isso tbm cria uma classe em  App>View>Component
 
+Para ignorar e enviar tudo
+@{{nome}}
 
+Transforma uma variavel php em json pra ser usado no javascript
+<script>
+const series = {{Js::from($series)}}
+<script>

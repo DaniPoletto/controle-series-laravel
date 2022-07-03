@@ -24,4 +24,9 @@ class SeriesController extends Controller
       //é o mesmo que 
       return view('series.index')->with('series', $series);
    }
+
+   public function create()
+   {
+      return view('series.create');
+   }
 }
