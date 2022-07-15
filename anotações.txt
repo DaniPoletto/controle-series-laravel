@@ -126,3 +126,12 @@ em resources>css>scss
 
 Rodar 
 npm run dev
+
+cria a migration
+php artisan make:migration serie
+
+roda a migration
+php artisan migrate
+
+Desfazer migration
+php artisan migrate:rollback 
