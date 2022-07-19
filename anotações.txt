@@ -135,3 +135,9 @@ php artisan migrate
 
 Desfazer migration
 php artisan migrate:rollback 
+
+@csrf - evita ataque Cross-site request Forgery
+dd - dump and die
+
+Cria model
+php artisan make:model Serie
