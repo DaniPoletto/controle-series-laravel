@@ -1,7 +1,18 @@
 # Controle de Séries com Laravel
-Projeto Desenvolvido durante o curso de Laravel da Alura
+Projeto Desenvolvido durante o curso de Laravel da Alura. 
 
-## Mostra todos os comandos
+## Projeto
+Sistema para controle de séries com as seguintes funções:
+- [x] Cadastrar séries
+- [x] Marcar série como assistida
+
+### Tecnologias
+- [x] PHP 7.3
+- [x] Laravel 8.75
+- [x] MySql
+
+## Resumo de anotações de conteúdo de aula
+### Mostra todos os comandos
 ```
 php artisan
 ``` 
