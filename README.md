@@ -3,7 +3,7 @@ Projeto Desenvolvido durante o curso de Laravel da Alura.
 
 ## Projeto
 Sistema para controle de séries com as seguintes funções:
-- [x] Cadastrar séries
+- [x] CRUD de séries
 - [x] Marcar série como assistida
 
 ### Tecnologias
