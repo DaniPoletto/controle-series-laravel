@@ -12,11 +12,17 @@ Sistema para controle de séries com as seguintes funções:
 - [x] MySql
 
 ## Resumo de anotações de conteúdo de aula
+### Criar um projeto
+```
+composer create-project laravel/laravel:^8.0 nome-do-projeto
+```
+
 ### Mostra todos os comandos
 ```
 php artisan
-``` 
-## Subir um servidor
+```
+
+### Subir o servidor
 ```
 php artisan serve
 ```
