@@ -11,6 +11,9 @@ Sistema para controle de séries com as seguintes funções:
 - [x] Laravel 8.75
 - [x] MySql
 
+### Versão em Symfony
+https://github.com/DaniPoletto/controle-series-symfony
+
 ## Resumo de anotações de conteúdo de aula
 ### Criar um projeto
 ```
