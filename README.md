@@ -30,13 +30,13 @@ php artisan
 php artisan serve
 ```
 
-> Para criar um controler é preciso acessar a pasta App-Http-Controllers
-
 ## Para criar uma rota
 [nome da classe, metodo]
 ```
 Route::get('/series', [SeriesController::class, 'listarSeries']);
 ```
+
+> Para criar um controler é preciso acessar a pasta App-Http-Controllers
 
 ## Outra forma de criar um controller - pelo terminal
 ```
