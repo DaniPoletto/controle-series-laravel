@@ -151,7 +151,7 @@ return view('listar-series')->with('series', $series);
       <?php } ?>
 ```
 
-> Por padrão se cria uma pasta dento de resources>view>pasta>index e no controller se chama series.index
+> Por padrão se cria uma pasta dento de resources>view>pasta>index.blade.php e no controller se chama series.index. O ponto indica a separação de diretório.
 
 ##### Criar Component Blade
 criar uma pasta components em resources>views 
