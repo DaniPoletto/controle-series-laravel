@@ -183,7 +183,7 @@ criar uma pasta components em resources>views
 php artisan make:component Alerta
 ```
 
-> Isso tbm cria uma classe em  App>View>Component
+> Isso também cria uma classe em  App>View>Component
 
 ##### Para ignorar e enviar tudo
 ```
