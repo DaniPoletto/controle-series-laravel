@@ -185,7 +185,9 @@ php artisan make:component Alerta
 
 > Isso também cria uma classe em  App>View>Component
 
-##### Para ignorar e enviar tudo
+##### Para ignorar e enviar como está
+> O Blade não irá parsear e enviará nome
+
 ```
 @{{nome}}
 ```
