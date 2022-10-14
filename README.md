@@ -12,6 +12,25 @@ Sistema para controle de séries com as seguintes funções:
 - [x] MySql
 
 <!--
+### Inicialização
+1 - Instalando dependências de back-end
+```
+composer install
+```
+
+2 - Instalando dependências de front-end
+```
+npm install
+```
+
+2 - Configurando banco
+Criar arquivo .env copiando as configurações do arquivo .env.example
+
+3 - Rodar migrations
+```
+
+```
+
 ### Versão em Symfony (em desenvolvimento)
 https://github.com/DaniPoletto/controle-series-symfony -->
 
