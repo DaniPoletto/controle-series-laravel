@@ -113,7 +113,7 @@ return redirect("google.com.br");
 #### Exibir uma view
 
 > 1 - arquivo
-> 2 - dados (variavel - array)
+> 2 - dados (variaveis a serem passadas pra view - array)
 
 ```
 return view('listar-series', [
@@ -125,6 +125,11 @@ return view('listar-series', [
 
 ```
 return view('listar-series', compact('series'));
+```
+
+Que também é o mesmo que
+```
+return view('listar-series')->with('series', $series);
 ```
 
 #### Blade
@@ -144,11 +149,6 @@ return view('listar-series', compact('series'));
       <?php foreach ($series as $serie) {?>
         <li><?=$serie?></li>
       <?php } ?>
-```
-
-Também posso usar para passar o parametro series
-```
-return view('listar-series')->with('series', $series);
 ```
 
 > Por padrão se cria uma pasta dento de resources>view>pasta>index e no controller se chama series.index
