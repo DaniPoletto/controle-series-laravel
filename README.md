@@ -30,27 +30,29 @@ php artisan
 php artisan serve
 ```
 
-## Para criar uma rota
+### Para criar uma rota
 [nome da classe, metodo]
 ```
 Route::get('/series', [SeriesController::class, 'listarSeries']);
 ```
+### Controller
 
 > Para criar um controler é preciso acessar a pasta App-Http-Controllers
 
-## Outra forma de criar um controller - pelo terminal
+#### Outra forma de criar um controller - pelo terminal
 ```
 php artisan make:controller SeriesController
 ```
 
-## Criar um controller com todos os métodos
+#### Criar um controller com todos os métodos
 ```
 php artisan make:controller PhotoController --resource
 ```
 
 > Não dar o echo direto de um controler
 
-## Usando Respose:
+### Request e Response
+#### Usando Respose:
 Posso retornar :
 ```
 return response($resposta, '201', []); sendo o segundo o http status code e o 3 os cabeçalhos
@@ -63,7 +65,7 @@ return $resposta
 
 > Se retornar um objeto, array, ele vai automaticamente retornar um json
 
-## Usando o Request
+#### Usando o Request
 ```
    public function index(Request $request)
    {
@@ -71,27 +73,28 @@ return $resposta
       $request->get('id');
 ```
 
-## Pegar url do request
+#### Pegar url do request
 ```
 $request->url();
 ```
 
-## Pega o method usado no request
+#### Pega o method usado no request
 ```
 $request->method();
 ```
 
-## Pega inputs do formulario
+#### Pega inputs do formulario
 ```
 $request->input();
 ```
 
-## Redireciona pra url
+### Redireciona pra url
 ```
 return redirect("google.com.br");
 ```
 
-## Exibir uma view
+### View
+#### Exibir uma view
 1 - arquivo
 2 - dados (variavel - array)
 ```
@@ -103,7 +106,7 @@ return view('listar-series');
 return view('listar-series', compact('series'));
 ```
 
-## Blade
+#### Blade
 ```
 {{$serie}} = echo $serie
 
@@ -126,7 +129,7 @@ return view('listar-series')->with('series', $series);
 
 > Por padrão se cria uma pasta dento de resources>view>pasta>index e no controller se chama series.index
 
-## Component Blade
+#### Component Blade
 criar uma pasta components em resources>views 
 
 ```
@@ -161,14 +164,14 @@ Para ignorar e enviar tudo
 @{{nome}}
 ```
 
-## Transforma uma variavel php em json pra ser usado no javascript
+#### Transforma uma variavel php em json pra ser usado no javascript
 ```
 <script>
 const series = {{Js::from($series)}}
 <script>
 ```
 
-## Webpack - configurações do que fazer no front-end
+### Webpack - configurações do que fazer no front-end
 - [x] Laravel Mix - pacote javascript
 
 Para baixar o pacote laravel mix:
@@ -178,7 +181,7 @@ npm install
 
 > É preciso ter instalado o node /npm - NPM é um gerenciador de dependencia
 
-## Instalar bootstrap
+#### Instalar bootstrap
 
 ```
 npm install bootstrap
@@ -191,18 +194,19 @@ Rodar
 ```
 npm run dev
 ```
+### Migrations
 
-## Cria a migration
+#### Cria a migration
 ```
 php artisan make:migration serie
 ```
 
-## Roda a migration
+#### Roda a migration
 ```
 php artisan migrate
 ```
 
-## Desfazer migration
+#### Desfazer migration
 ```
 php artisan migrate:rollback 
 ```
@@ -211,7 +215,8 @@ php artisan migrate:rollback
 
 > dd - dump and die
 
-## Cria model
+### Models
+#### Cria model
 
 ```
 php artisan make:model Serie
