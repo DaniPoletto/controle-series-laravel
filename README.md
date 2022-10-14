@@ -121,7 +121,9 @@ return view('listar-series', compact('series'));
 
 ```
 {{$serie}} = echo $serie
+```
 
+```
       @foreach($series as $serie)
         <li>{{$serie}}</li>
       @endforeach
