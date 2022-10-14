@@ -192,7 +192,7 @@ php artisan make:component Alerta
 @{{nome}}
 ```
 
-#### Transforma uma variavel php em json pra ser usado no javascript
+##### Transforma uma variavel php em json pra ser usado no javascript
 ```
 <script>
 const series = {{Js::from($series)}}
