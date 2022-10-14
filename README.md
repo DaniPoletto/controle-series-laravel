@@ -116,7 +116,9 @@ return redirect("google.com.br");
 > 2 - dados (variavel - array)
 
 ```
-return view('listar-series');
+return view('listar-series', [
+    'series' => $series
+]);
 ```
 
 É o mesmo que 
