@@ -25,10 +25,6 @@ composer create-project laravel/laravel:^8.0 nome-do-projeto
 php artisan
 ```
 
-> @csrf - evita ataque Cross-site request Forgery
-
-> dd - dump and die
-
 ### Subir o servidor
 ```
 php artisan serve
@@ -250,3 +246,7 @@ php artisan migrate:rollback
 ```
 php artisan make:model Serie
 ```
+
+> @csrf - evita ataque Cross-site request Forgery
+
+> dd - dump and die
