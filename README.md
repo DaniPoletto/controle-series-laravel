@@ -25,37 +25,45 @@ composer create-project laravel/laravel:^8.0 nome-do-projeto
 php artisan
 ```
 
+> @csrf - evita ataque Cross-site request Forgery
+
+> dd - dump and die
+
 ### Subir o servidor
 ```
 php artisan serve
 ```
 
-### Para criar uma rota
-[nome da classe, metodo]
+### Criar uma rota
+Route::verboHTTP('rota', [nome da classe, metodo]);
+
 ```
 Route::get('/series', [SeriesController::class, 'listarSeries']);
 ```
+
 ### Controller
 
-> Para criar um controler é preciso acessar a pasta App-Http-Controllers
+> Para criar um controler é preciso acessar a pasta App/Http/Controllers
 
-#### Outra forma de criar um controller - pelo terminal
+#### Criar um controller por comando
 ```
 php artisan make:controller SeriesController
 ```
 
-#### Criar um controller com todos os métodos
+#### Criar um controller por comando com todos os métodos
 ```
 php artisan make:controller PhotoController --resource
 ```
 
-> Não dar o echo direto de um controler
+> Boas práticas: Não dar o echo direto de um controler
 
 ### Request e Response
-#### Usando Respose:
-Posso retornar :
+#### Usando Respose
+
+> O segundo parametro corresponde ao HTTP status code e o 3 os cabeçalhos
+
 ```
-return response($resposta, '201', []); sendo o segundo o http status code e o 3 os cabeçalhos
+return response($resposta, '201', []); 
 ```
 
 >Por padrão já é retornado o codigo 200
@@ -63,7 +71,7 @@ return response($resposta, '201', []); sendo o segundo o http status code e o 3 
 return $resposta
 ```
 
-> Se retornar um objeto, array, ele vai automaticamente retornar um json
+> Se retornar um objeto, array, ele vai automaticamente retornar um JSON
 
 #### Usando o Request
 ```
@@ -78,35 +86,39 @@ return $resposta
 $request->url();
 ```
 
-#### Pega o method usado no request
+#### Pegar o method usado no request
 ```
 $request->method();
 ```
 
-#### Pega inputs do formulario
+#### Pegar inputs do formulário
 ```
 $request->input();
 ```
 
-### Redireciona pra url
+### Redirecionar pra url
 ```
 return redirect("google.com.br");
 ```
 
-### View
+### Views
 #### Exibir uma view
-1 - arquivo
-2 - dados (variavel - array)
+
+> 1 - arquivo
+> 2 - dados (variavel - array)
+
 ```
 return view('listar-series');
 ```
 
-é o mesmo que 
+É o mesmo que 
+
 ```
 return view('listar-series', compact('series'));
 ```
 
 #### Blade
+
 ```
 {{$serie}} = echo $serie
 
@@ -115,21 +127,21 @@ return view('listar-series', compact('series'));
       @endforeach
 ```
 
-é o mesmo que
+É o mesmo que
 ```
       <?php foreach ($series as $serie) {?>
         <li><?=$serie?></li>
       <?php } ?>
 ```
 
-tbm posso usar
+Também posso usar para passar o parametro series
 ```
 return view('listar-series')->with('series', $series);
 ```
 
 > Por padrão se cria uma pasta dento de resources>view>pasta>index e no controller se chama series.index
 
-#### Component Blade
+##### Criar Component Blade
 criar uma pasta components em resources>views 
 
 ```
@@ -153,13 +165,15 @@ criar uma pasta components em resources>views
 </x-layout>
 ```
 
-por comando:
+##### Criar componente Blade por comando:
+
 ```
 php artisan make:component Alerta
 ```
+
 > Isso tbm cria uma classe em  App>View>Component
 
-Para ignorar e enviar tudo
+##### Para ignorar e enviar tudo
 ```
 @{{nome}}
 ```
@@ -191,29 +205,30 @@ incluir a linha
 @import "~bootstrap/scss/bootstrap"; em resources>css>scss
 
 Rodar 
+
 ```
 npm run dev
 ```
+
 ### Migrations
 
 #### Cria a migration
+
 ```
 php artisan make:migration serie
 ```
 
-#### Roda a migration
+#### Rodar a migration
+
 ```
 php artisan migrate
 ```
 
 #### Desfazer migration
+
 ```
 php artisan migrate:rollback 
 ```
-
-> @csrf - evita ataque Cross-site request Forgery
-
-> dd - dump and die
 
 ### Models
 #### Cria model
