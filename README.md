@@ -294,3 +294,13 @@ protected $table = 'seriados';
 > @csrf - evita ataque Cross-site request Forgery
 
 > dd - dump and die
+
+#### Formas de puxar informações do banco de dados
+ 
+```      
+  $series = DB::select('SELECT nome FROM series;');
+```
+
+```
+ $series = Serie::all();
+```
