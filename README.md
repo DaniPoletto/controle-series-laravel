@@ -249,7 +249,7 @@ npm run dev
 #### Cria a migration
 
 ```
-php artisan make:migration serie
+php artisan make:migration create_series_table
 ```
 
 #### Rodar a migration
