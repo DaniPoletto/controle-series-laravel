@@ -284,6 +284,13 @@ php artisan migrate:rollback
 php artisan make:model Serie
 ```
 
+> Ao utilizar comando acima, o laravel mapeia a model Serie para a tabela series. 
+> Também posso definir a tabela caso não siga o padrão:
+
+```
+protected $table = 'seriados';
+```
+
 > @csrf - evita ataque Cross-site request Forgery
 
 > dd - dump and die
