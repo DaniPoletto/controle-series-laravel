@@ -1,10 +1,11 @@
 # Controle de Séries com Laravel
-Projeto Desenvolvido durante o curso de Laravel da Alura. 
+
+![Sistema](https://github.com/DaniPoletto/controle-series-laravel/blob/master/primeira-versao.gif)
 
 ## Projeto
-Sistema para controle de séries com as seguintes funções:
+Projeto desenvolvido durante o curso de Laravel da Alura para controle de séries com as seguintes funções:
 - [x] CRUD de séries
-- [x] Marcar série como assistida
+- [ ] Marcar série como assistida
 
 ### Tecnologias
 - [x] PHP 7.3
