@@ -11,4 +11,8 @@ class Serie extends Model
     //quais campos são permitidos pra mass assingment
     //ignora tudo o que não estiver no array 
     protected $fillable = ['nome'];
+
+    // caso não siga o padrão, tbm posso definir
+    // O padrão é a model Serie ser mapeada como series
+    // protected $table = 'seriados';
 }
