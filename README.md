@@ -36,6 +36,11 @@ php artisan migrate
 php artisan key:generate
 ```
 
+5 - Subir servidor
+```
+php artisan serve
+```
+
 <!---
 ### Versão em Symfony (em desenvolvimento)
 https://github.com/DaniPoletto/controle-series-symfony -->
