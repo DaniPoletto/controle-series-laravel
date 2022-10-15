@@ -5,14 +5,13 @@
 ## Projeto
 Projeto desenvolvido durante o curso de Laravel da Alura para controle de séries com as seguintes funções:
 - [x] CRUD de séries
-- [ ] Marcar série como assistida
+<!-- - [ ] Marcar série como assistida -->
 
 ### Tecnologias
 - [x] PHP 7.3
 - [x] Laravel 8.75
 - [x] MySql
 
-<!--
 ### Inicialização
 1 - Instalando dependências de back-end
 ```
@@ -29,9 +28,15 @@ Criar arquivo .env copiando as configurações do arquivo .env.example
 
 3 - Rodar migrations
 ```
-
+php artisan migrate
 ```
 
+4 - Gerar chave de aplicação
+```
+php artisan key:generate
+```
+
+<!---
 ### Versão em Symfony (em desenvolvimento)
 https://github.com/DaniPoletto/controle-series-symfony -->
 
