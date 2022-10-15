@@ -2,6 +2,8 @@
 
 ![Sistema](https://github.com/DaniPoletto/controle-series-laravel/blob/master/primeira-versao.gif)
 
+> :construction: Projeto em construção :construction:
+
 ## Projeto
 Projeto desenvolvido durante o curso de Laravel da Alura para controle de séries com as seguintes funções:
 - [x] CRUD de séries
