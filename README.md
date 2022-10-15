@@ -298,7 +298,7 @@ protected $table = 'seriados';
 #### Formas de puxar informações do banco de dados
  
 ```      
-  $series = DB::select('SELECT nome FROM series;');
+ $series = DB::select('SELECT nome FROM series;');
 ```
 
 ```
