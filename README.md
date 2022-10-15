@@ -304,3 +304,7 @@ protected $table = 'seriados';
 ```
  $series = Serie::all();
 ```
+
+```
+Serie::query()->orderBy('nome')->get();
+```
