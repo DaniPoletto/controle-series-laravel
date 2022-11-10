@@ -70,6 +70,27 @@ Route::verboHTTP('rota', [nome da classe, metodo]);
 Route::get('/series', [SeriesController::class, 'listarSeries']);
 ```
 
+#### Utilizando grupo de rotas
+```
+Route::controller(SeriesController::class)->group(function () {
+     Route::get('/series', 'index')->name('series.index');
+     Route::get('/series/create', 'create')->name('series.create');
+     Route::post('/series/salvar', 'store')->name('series.store');
+});
+```
+
+#### Utilizando o padrão e excluindo rotas desnecessárias
+```
+Route::resource('/series', SeriesController::class)
+    ->except(['show']);
+```
+
+#### Nomeando rotas
+```
+Route::delete('/series/destroy/{serie}', [SeriesController::class, 'destroy'])
+     ->name('series.destroy');
+```
+
 ### Controller
 
 > Para criar um controler é preciso acessar a pasta App/Http/Controllers
