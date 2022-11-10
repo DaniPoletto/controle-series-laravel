@@ -137,6 +137,21 @@ $request->method();
 $request->input();
 ```
 
+#### Pegar todos os campos
+```
+$request->all();
+```
+
+#### Pegar apenas alguns campos
+```
+$request->only(['nome', 'descricao']);
+```
+
+#### Pegar todos com excessão de alguns campos
+```
+$request->except(['_token']);
+```
+
 ### Redirecionar pra url
 ```
 return redirect("google.com.br");
@@ -308,3 +323,5 @@ protected $table = 'seriados';
 ```
 Serie::query()->orderBy('nome')->get();
 ```
+
+
