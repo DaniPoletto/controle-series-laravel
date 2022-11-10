@@ -20,16 +20,3 @@ Route::get('/', function () {
 
 Route::resource('/series', SeriesController::class)
     ->except(['show']);
-
-// Route::delete('/series/destroy/{serie}', [SeriesController::class, 'destroy'])
-//     ->name('series.destroy');
-
-// Route::controller(SeriesController::class)->group(function () {
-//     Route::get('/series', 'index')->name('series.index');
-//     Route::get('/series/create', 'create')->name('series.create');
-//     Route::post('/series/salvar', 'store')->name('series.store');
-// });
-
-// Route::get('/series', [SeriesController::class, 'index']);
-// Route::get('/series/criar', [SeriesController::class, 'create']);
-// Route::post('/series/salvar', [SeriesController::class, 'store']);
