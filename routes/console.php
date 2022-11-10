@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Foundation\Inspiring;
+use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Artisan;
 
 /*
@@ -17,3 +18,20 @@ use Illuminate\Support\Facades\Artisan;
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');
+
+Artisan::command('dani', function() {
+    $contents = "<?php
+    namespace App\Http\Controllers;
+
+    use App\Models\Serie;
+    use Illuminate\Http\Request;
+    use Illuminate\Support\Facades\DB;
+    
+    class DaniController extends Controller
+    {
+        
+    }";
+
+    $files = new Filesystem();
+    $files->put("app/Http/Controllers/teste.php", $contents);
+});
