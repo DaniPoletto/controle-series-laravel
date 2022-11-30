@@ -358,6 +358,15 @@ Serie::query()->orderBy('nome')->get();
 $request->session()->put('mensagem.sucesso', 'Série removida com sucesso.');
 ```
 
+#### Verificação se existe parametro em sessão
+```
+$request->session()->has('mensagem.sucesso');
+```
+
+#### Retornar valor de parametro da sessão
+```
+$request->session()->has('mensagem.sucesso');
+```
 
 
 
