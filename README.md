@@ -79,7 +79,7 @@ Route::controller(SeriesController::class)->group(function () {
 });
 ```
 
-### Criando apenas algumas rotas
+#### Criando apenas algumas rotas
 ```
 Route::resource('/series', SeriesController::class)
     ->only(['show']);
