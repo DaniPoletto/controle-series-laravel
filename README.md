@@ -351,4 +351,13 @@ protected $table = 'seriados';
 Serie::query()->orderBy('nome')->get();
 ```
 
+### Sessions
+
+#### Inserindo informações em sessão
+```
+$request->session()->put('mensagem.sucesso', 'Série removida com sucesso.');
+```
+
+
+
 
