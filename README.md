@@ -274,6 +274,13 @@ const series = {{Js::from($series)}}
 <script>
 ```
 
+##### Verifica se existe
+```
+@isset($mensagemSucesso)
+...
+@endisset
+```
+
 ### Webpack - configurações do que fazer no front-end
 - [x] Laravel Mix - pacote javascript
 
