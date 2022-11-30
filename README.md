@@ -79,6 +79,12 @@ Route::controller(SeriesController::class)->group(function () {
 });
 ```
 
+### Criando apenas algumas rotas
+```
+Route::resource('/series', SeriesController::class)
+    ->only(['show']);
+```
+
 #### Utilizando o padrão e excluindo rotas desnecessárias
 ```
 Route::resource('/series', SeriesController::class)
