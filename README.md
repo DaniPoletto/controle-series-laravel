@@ -375,5 +375,16 @@ $request->session()->has('mensagem.sucesso');
 $request->session()->has('mensagem.sucesso');
 ```
 
+#### Remover parametro
+```
+$request->session()->forget('mensagem.sucesso');
+```
+
+#### Adicionar valor da sessão e remover logo em seguida após ser exibido (flash message)
+```
+$request->session()->flash('mensagem.sucesso', 'Série removida com sucesso');
+```
+
+
 
 
