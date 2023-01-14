@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Season;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Serie extends Model
 {
@@ -15,4 +16,9 @@ class Serie extends Model
     // caso não siga o padrão, tbm posso definir
     // O padrão é a model Serie ser mapeada como series
     // protected $table = 'seriados';
+
+    public function temporadas()
+    {
+        return $this->hasMany(Season::class, 'series_id');
+    }
 }
