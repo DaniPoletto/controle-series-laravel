@@ -11,9 +11,14 @@ class SeriesController extends Controller
 {
    public function index(Request $request)
    {
-      $series = Serie::query()->orderBy('nome')->get();
+      $series = Serie::all();
+      //acessando o escopo local
+      // $series = Serie::active();
       $mensagemSucesso = session('mensagem.sucesso');
-      return view('series.index')->with('series', $series)->with('mensagemSucesso', $mensagemSucesso);
+
+      return view('series.index')
+         ->with('series', $series)
+         ->with('mensagemSucesso', $mensagemSucesso);
    }
 
    public function create()
