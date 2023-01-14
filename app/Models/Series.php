@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Serie extends Model
+class Series extends Model
 {
     use HasFactory;
     //quais campos são permitidos pra mass assingment
@@ -18,7 +18,7 @@ class Serie extends Model
     // O padrão é a model Serie ser mapeada como series
     // protected $table = 'seriados';
 
-    public function temporadas()
+    public function seasons()
     {
         return $this->hasMany(Season::class, 'series_id');
     }
