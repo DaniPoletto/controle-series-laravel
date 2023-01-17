@@ -396,6 +396,10 @@ $request->session()->forget('mensagem.sucesso');
 $request->session()->flash('mensagem.sucesso', 'Série removida com sucesso');
 ```
 
+#### Debugbar
+```
+composer require barryvdh/laravel-debugbar --dev
+```
 
 
 
