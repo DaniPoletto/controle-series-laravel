@@ -29,6 +29,18 @@ class SeriesController extends Controller
    public function store(SeriesFormRequest $request) 
    {
       $serie = Series::create($request->all());
+      for ($i=1; $i <= $request->seasonsQty; $i++) { 
+         $season = $serie->seasons()->create([
+            'number' => $i
+         ]);
+
+         for ($j=1; $j <= $request->episodesPerSeason; $j++) { 
+            $season->episodes()->create([
+               'number' => $j
+            ]);
+         }
+      }
+      
       return redirect()
                ->route('series.index')
                ->with('mensagem.sucesso',"Série '{$serie->nome}' adicionada com sucesso");

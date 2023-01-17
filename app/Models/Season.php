@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Season extends Model
 {
     use HasFactory;
+    protected $fillable = ['number'];
 
     public function series()
     {
