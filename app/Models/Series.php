@@ -13,6 +13,8 @@ class Series extends Model
     //quais campos são permitidos pra mass assingment
     //ignora tudo o que não estiver no array 
     protected $fillable = ['nome'];
+    //sempre trazer as temporadas junto com a serie
+    //protected $with = ['seasons'];
 
     // caso não siga o padrão, tbm posso definir
     // O padrão é a model Serie ser mapeada como series
