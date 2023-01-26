@@ -54,7 +54,7 @@ class SeriesController extends Controller
             } 
          }
          Episode::insert($episodes);
-      });
+      }, 5);//tentar 5 vezes
 
           // for ($i=1; $i <= $request->seasonsQty; $i++) { 
          //    $season = $serie->seasons()->create([
