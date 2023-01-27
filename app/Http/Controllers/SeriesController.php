@@ -30,9 +30,35 @@ class SeriesController extends Controller
 
    public function store(SeriesFormRequest $request) 
    {
-      $serie = null;
+      
+      //posso colocar dentro de um try catch e incluir o DB::rollBack() no catch
+      // DB::beginTransaction();
+      // $serie = Series::create($request->all());
+      
+      // $seasons = [];
+      // for ($i=1; $i <= $request->seasonsQty; $i++) { 
+      //    $seasons[] = [
+      //       'series_id' => $serie->id,
+      //       'number' => $i,
+      //    ];
+      // }
+      // Season::insert($seasons);
+
+      // $episodes = [];
+      // foreach ($serie->seasons as $season) {
+      //    for ($j=1; $j <= $request->episodesPerSeason; $j++) { 
+      //       $episodes[] = [
+      //          'season_id' => $season->id,
+      //          'number' => $j
+      //       ];
+      //    } 
+      // }
+      // Episode::insert($episodes);
+      // DB::commit();
+
       //executa tudo o que está dentro e commita no banco
-      DB::transaction(function () use ($request, &$serie){
+      //seria necessário por dentro do try catch
+      $serie = DB::transaction(function () use ($request){
          $serie = Series::create($request->all());
          
          $seasons = [];
@@ -54,19 +80,47 @@ class SeriesController extends Controller
             } 
          }
          Episode::insert($episodes);
-      }, 5);//tentar 5 vezes
 
-          // for ($i=1; $i <= $request->seasonsQty; $i++) { 
-         //    $season = $serie->seasons()->create([
-         //       'number' => $i
-         //    ]);
+         return $serie;
+      });
+
+      // $serie = null;
+      // //executa tudo o que está dentro e commita no banco
+      // DB::transaction(function () use ($request, &$serie){
+      //    $serie = Series::create($request->all());
+         
+      //    $seasons = [];
+      //    for ($i=1; $i <= $request->seasonsQty; $i++) { 
+      //       $seasons[] = [
+      //          'series_id' => $serie->id,
+      //          'number' => $i,
+      //       ];
+      //    }
+      //    Season::insert($seasons);
    
-         //    for ($j=1; $j <= $request->episodesPerSeason; $j++) { 
-         //       $season->episodes()->create([
-         //          'number' => $j
-         //       ]);
-         //    }
-         // }
+      //    $episodes = [];
+      //    foreach ($serie->seasons as $season) {
+      //       for ($j=1; $j <= $request->episodesPerSeason; $j++) { 
+      //          $episodes[] = [
+      //             'season_id' => $season->id,
+      //             'number' => $j
+      //          ];
+      //       } 
+      //    }
+      //    Episode::insert($episodes);
+      // }, 5);//tentar 5 vezes
+
+      // for ($i=1; $i <= $request->seasonsQty; $i++) { 
+      //    $season = $serie->seasons()->create([
+      //       'number' => $i
+      //    ]);
+
+      //    for ($j=1; $j <= $request->episodesPerSeason; $j++) { 
+      //       $season->episodes()->create([
+      //          'number' => $j
+      //       ]);
+      //    }
+      // }
 
       return redirect()
                ->route('series.index')
