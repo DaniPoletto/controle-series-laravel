@@ -7,10 +7,16 @@ use App\Models\Series;
 use App\Models\Episode;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\repositories\SeriesRepository;
 use App\Http\Requests\SeriesFormRequest;
 
 class SeriesController extends Controller
 {
+   public function __construct(SeriesRepository $repository)
+   {
+      $this->repository = $repository;
+   }
+
    public function index(Request $request)
    {
       $series = Series::all();
@@ -58,32 +64,9 @@ class SeriesController extends Controller
 
       //executa tudo o que está dentro e commita no banco
       //seria necessário por dentro do try catch
-      $serie = DB::transaction(function () use ($request){
-         $serie = Series::create($request->all());
-         
-         $seasons = [];
-         for ($i=1; $i <= $request->seasonsQty; $i++) { 
-            $seasons[] = [
-               'series_id' => $serie->id,
-               'number' => $i,
-            ];
-         }
-         Season::insert($seasons);
-   
-         $episodes = [];
-         foreach ($serie->seasons as $season) {
-            for ($j=1; $j <= $request->episodesPerSeason; $j++) { 
-               $episodes[] = [
-                  'season_id' => $season->id,
-                  'number' => $j
-               ];
-            } 
-         }
-         Episode::insert($episodes);
 
-         return $serie;
-      });
-
+      $serie = $this->repository->add($request);
+      
       // $serie = null;
       // //executa tudo o que está dentro e commita no banco
       // DB::transaction(function () use ($request, &$serie){
