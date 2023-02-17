@@ -2,6 +2,7 @@
     <head>
         <title>Series</title>
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
     </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
