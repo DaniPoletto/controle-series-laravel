@@ -401,5 +401,12 @@ $request->session()->flash('mensagem.sucesso', 'Série removida com sucesso');
 composer require barryvdh/laravel-debugbar --dev
 ```
 
+### E-mail
+
+#### Criar e-mail
+```
+php artisan make:mail SeriesCreated
+```
+
 
 
