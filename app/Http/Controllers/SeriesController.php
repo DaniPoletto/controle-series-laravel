@@ -2,17 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Middleware\Autenticador;
 use App\Models\Season;
 use App\Models\Series;
 use App\Models\Episode;
+use App\Mail\SeriesCreated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use App\Http\Middleware\Autenticador;
 use App\Repositories\SeriesRepository;
 use App\Http\Requests\SeriesFormRequest;
 
 class SeriesController extends Controller
 {
+   public $repository;
    public function __construct(SeriesRepository $repository)
    {
       //aplicar middleware a todo controller
@@ -69,6 +73,14 @@ class SeriesController extends Controller
       //seria necessário por dentro do try catch
 
       $serie = $this->repository->add($request);
+      $email = new SeriesCreated(
+         $serie->nome,
+         $serie->id,
+         $request->seasonsQty,
+         $request->episodesPerSeason
+      );
+      // $email->subject("Série Criada");
+      Mail::to($request->user())->send($email);
       
       // $serie = null;
       // //executa tudo o que está dentro e commita no banco

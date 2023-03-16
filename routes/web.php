@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SeriesController;
+use App\Mail\SeriesCreated;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,5 +25,14 @@ Route::get('/dashboard', function () {
 
 Route::resource('/series', SeriesController::class)
     ->except(['show']);
+
+Route::get('/email', function () {
+    return new SeriesCreated(
+        'Brooklyn 99',
+        12,
+        5,
+        10
+    );
+});
 
 require __DIR__.'/auth.php';
