@@ -408,5 +408,10 @@ composer require barryvdh/laravel-debugbar --dev
 php artisan make:mail SeriesCreated
 ```
 
+#### Testando
+```
+https://mailtrap.io/
+```
+
 
 
