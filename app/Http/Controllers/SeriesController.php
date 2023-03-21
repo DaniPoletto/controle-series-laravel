@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Season;
 use App\Models\Series;
 use App\Models\Episode;
@@ -73,14 +74,17 @@ class SeriesController extends Controller
       //seria necessário por dentro do try catch
 
       $serie = $this->repository->add($request);
-      $email = new SeriesCreated(
-         $serie->nome,
-         $serie->id,
-         $request->seasonsQty,
-         $request->episodesPerSeason
-      );
       // $email->subject("Série Criada");
-      Mail::to($request->user())->send($email);
+      $userList = User::all();
+      foreach ($userList as $user) {
+         $email = new SeriesCreated(
+            $serie->nome,
+            $serie->id,
+            $request->seasonsQty,
+            $request->episodesPerSeason
+         );
+         Mail::to($user)->send($email);
+      }
       
       // $serie = null;
       // //executa tudo o que está dentro e commita no banco
