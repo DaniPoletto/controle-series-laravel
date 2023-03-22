@@ -76,14 +76,16 @@ class SeriesController extends Controller
       $serie = $this->repository->add($request);
       // $email->subject("Série Criada");
       $userList = User::all();
-      foreach ($userList as $user) {
+      foreach ($userList as $index => $user) {
          $email = new SeriesCreated(
             $serie->nome,
             $serie->id,
             $request->seasonsQty,
             $request->episodesPerSeason
          );
-         Mail::to($user)->queue($email);
+         $when = new \DateTime();
+         $when->modify($index * 2 . ' seconds');
+         Mail::to($user)->later($when, $email);
       }
       
       // $serie = null;
