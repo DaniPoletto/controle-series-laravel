@@ -445,7 +445,7 @@ Utilizar em tempo de desenvolvimento:
 php artisan queue:listen
 ```
 
-Tentar processar de novo
+Colocar na fila para tentar reprocessar de novo
 ```
 php artisan queue:retry "all"
 ```
