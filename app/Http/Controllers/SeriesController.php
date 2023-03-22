@@ -83,8 +83,7 @@ class SeriesController extends Controller
             $request->seasonsQty,
             $request->episodesPerSeason
          );
-         $when = new \DateTime();
-         $when->modify($index * 2 . ' seconds');
+         $when = now()->addSeconds($index * 2);
          Mail::to($user)->later($when, $email);
       }
       
