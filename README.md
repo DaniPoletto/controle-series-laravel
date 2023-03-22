@@ -429,6 +429,22 @@ QUEUE_CONNECTION=database
 php artisan queue:table
 ```
 
+#### Executar comandos php no terminal
+```
+php artisan tinker
+```
+
+#### Executando a fila
+Utilizar em produção:
+```
+php artisan queue:work
+```
+
+Utilizar em tempo de desenvolvimento:
+```
+php artisan queue:listen
+```
+
 
 
 
