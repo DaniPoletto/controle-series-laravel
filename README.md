@@ -454,9 +454,9 @@ php artisan queue:retry "all"
 php artisan queue:failed
 ```
 
-Tentar 2 vezes em caso de falha
+Tentar 2 vezes em caso de falha com delay de 10 segundos entre uma tentativa e outra
 ```
-php artisan serve queue:work --tries=2
+php artisan serve queue:work --tries=2 --delay=10
 ```
 
 
