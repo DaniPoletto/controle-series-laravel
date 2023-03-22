@@ -413,5 +413,18 @@ php artisan make:mail SeriesCreated
 https://mailtrap.io/
 ```
 
+#### Adicionando e-mails em uma fila
+```
+Mail::to($user)->queue($email);
+```
+
+#### Configurar para usar o banco como fila
+no arquivo .env:
+```
+QUEUE_CONNECTION=database
+```
+
+
+
 
 
