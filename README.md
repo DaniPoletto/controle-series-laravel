@@ -424,6 +424,10 @@ no arquivo .env:
 QUEUE_CONNECTION=database
 ```
 
+#### Criar migration para fila
+```
+php artisan queue:table
+```
 
 
 
