@@ -459,5 +459,6 @@ Tentar 2 vezes em caso de falha com delay de 10 segundos entre uma tentativa e o
 php artisan serve queue:work --tries=2 --delay=10
 ```
 
+Não é o ideal geralmente. 
 
 
