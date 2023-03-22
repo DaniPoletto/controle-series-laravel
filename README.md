@@ -445,6 +445,14 @@ Utilizar em tempo de desenvolvimento:
 php artisan queue:listen
 ```
 
+Tentar processar de novo
+```
+php artisan queue:retry "all"
+```
+
+```
+php artisan queue:failed
+```
 
 
 
