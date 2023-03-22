@@ -83,7 +83,7 @@ class SeriesController extends Controller
             $request->seasonsQty,
             $request->episodesPerSeason
          );
-         Mail::to($user)->send($email);
+         Mail::to($user)->queue($email);
       }
       
       // $serie = null;
