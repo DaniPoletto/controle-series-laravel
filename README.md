@@ -482,3 +482,8 @@ php artisan make:event SeriesCreated
             EmailUsersAboutSeriesCreated::class,
         ],
 ```
+
+### Criação de log
+```
+Log::info("Série criada com sucesso");
+```
