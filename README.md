@@ -466,3 +466,7 @@ Não é o ideal geralmente.
 php artisan make:listener EmailUsersAboutSeriesCreated
 ```
 
+### Criar evento
+```
+php artisan make:event SeriesCreated
+```
