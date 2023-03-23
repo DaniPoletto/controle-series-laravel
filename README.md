@@ -461,4 +461,8 @@ php artisan serve queue:work --tries=2 --delay=10
 
 Não é o ideal geralmente. 
 
+### Criar um listener para um evento
+```
+php artisan make:listener EmailUsersAboutSeriesCreated
+```
 
