@@ -470,3 +470,10 @@ php artisan make:listener EmailUsersAboutSeriesCreated
 ```
 php artisan make:event SeriesCreated
 ```
+
+É necessário configurar em EventServiceProvider para que o evento seja executado
+```
+        SeriesCreated::class => [
+            EmailUsersAboutSeriesCreated::class,
+        ],
+```
