@@ -466,6 +466,11 @@ Não é o ideal geralmente.
 php artisan make:listener EmailUsersAboutSeriesCreated
 ```
 
+Criar listener informando qual evento ele vai escutar
+```
+php artisan make:listener LogSeriesCreated -e SeriesCreated
+```
+
 ### Criar evento
 ```
 php artisan make:event SeriesCreated
