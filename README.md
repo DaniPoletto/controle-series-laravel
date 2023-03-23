@@ -461,6 +461,11 @@ php artisan serve queue:work --tries=2 --delay=10
 
 Não é o ideal geralmente. 
 
+Limpar a fila
+```
+php artisan queue:clear
+```
+
 ### Criar um listener para um evento
 ```
 php artisan make:listener EmailUsersAboutSeriesCreated
