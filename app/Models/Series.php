@@ -12,7 +12,7 @@ class Series extends Model
     use HasFactory;
     //quais campos são permitidos pra mass assingment
     //ignora tudo o que não estiver no array 
-    protected $fillable = ['nome'];
+    protected $fillable = ['nome', 'cover'];
     //sempre trazer as temporadas junto com a serie
     //protected $with = ['seasons'];
 

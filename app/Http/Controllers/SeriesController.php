@@ -74,6 +74,9 @@ class SeriesController extends Controller
       //executa tudo o que está dentro e commita no banco
       //seria necessário por dentro do try catch
 
+      $coverPath = $request->file('cover')->store('series_cover', 'public');
+      $request->coverPath = $coverPath;
+      // $request->file('cover')->storeAs('series_cover', 'nome_do_arquico');
       $serie = $this->repository->add($request);
       //gera, emite esse evento
       
