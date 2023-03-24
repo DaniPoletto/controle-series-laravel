@@ -507,3 +507,10 @@ Escolher onde salvar o arquivo (public)
 ```
 $request->file('cover')->store('series_cover', 'public');
 ```
+
+Criar um link simbólico para deixar arquivo acessível
+```
+php artisan storage:link
+```
+
+
