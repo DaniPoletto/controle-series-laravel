@@ -492,3 +492,13 @@ php artisan make:event SeriesCreated
 ```
 Log::info("Série criada com sucesso");
 ```
+
+### Salvar arquivo
+```
+$request->file('cover')->store('series_cover');
+```
+
+Salvar arquivo definindo um nome
+```
+$serie = $this->repository->add($request);
+```
