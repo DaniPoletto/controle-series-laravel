@@ -502,3 +502,8 @@ Salvar arquivo definindo um nome
 ```
 $serie = $this->repository->add($request);
 ```
+
+Escolher onde salvar o arquivo (public)
+```
+$request->file('cover')->store('series_cover', 'public');
+```
