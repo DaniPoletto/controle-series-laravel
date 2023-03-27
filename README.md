@@ -518,3 +518,8 @@ php artisan storage:link
 php artisan test
 ```
 
+### Criando um teste
+```
+php artisan make:test SeriesRepositoryTest
+```
+
