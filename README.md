@@ -513,4 +513,8 @@ Criar um link simbólico para deixar arquivo acessível
 php artisan storage:link
 ```
 
+### Executando teste
+```
+php artisan test
+```
 
